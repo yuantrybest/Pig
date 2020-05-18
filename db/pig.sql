@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS `pig`;
+-- DROP DATABASE IF EXISTS `pig`;
 
-CREATE DATABASE  `pig` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+-- CREATE DATABASE  `pig` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+-- 
+-- SET NAMES utf8mb4;
+-- SET FOREIGN_KEY_CHECKS = 0;
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
-
-USE `pig`;
+-- USE `pig`;
 
 -- ----------------------------
 -- Table structure for sys_dept
