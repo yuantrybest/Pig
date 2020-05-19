@@ -30,6 +30,9 @@ import java.util.Properties;
  * @date 2019/2/1
  */
 @Configuration
+/**
+ * 生成登陆页面的验证码
+ */
 public class KaptchaConfiguration {
 
 	private static final String KAPTCHA_BORDER = "kaptcha.border";

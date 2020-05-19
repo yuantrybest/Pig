@@ -1,0 +1,82 @@
+框架使用undertow作为web容器 不是tomcat
+
+pig-auth    基于 spring security oAuth2
+  认证服务器配置 (DataSource,路径权限,认证相关类,token存储,reids连接)
+  认证路径,页面配置
+  token管理
+  认证结果处理类
+
+pig-common 公共功能聚合模块
+  pig-common-core
+      引入hutool redis(配置) servlet mybatis-plus open-feign(okhttp) swagger validation jackson(配置)
+      配置
+      常量（enum，interface）
+      自定义异常
+      自定义前端封装返回体
+  pig-common-datasource   动态切换数据源
+      自定义注解
+      配置文件类
+  pig-common-log  统一日志服务
+      自定义注解 @syslog
+      AOP日志切面
+      Spring事件与监听器(服务调用日志)
+      Spring容器初始化器
+      日志工具类
+      spring.factories 启动容器时创建bean
+  pig-common-mybatis  封装mybatis
+      配置类注入mp的分页拦截器
+      spring.factories 启动容器时创建bean
+  pig-common-security   安全工具包(security+oauth)
+      自定义注解
+      **资源服务器(配置 token
+      fegin拦截oauth的token
+      认证使用的handler
+      工具类(获取传递的authentication对象中的信息)
+      自定义异常
+      引入security，OAtuh2
+      spring.factories 启动容器时创建bean
+      中文异常映射
+  pig-common-swagger  在线接口文档
+      自动配置类 为代码添加swagger注解
+      spring.factories 启动容器时创建bean
+
+pig-gateway  基于 spring cloud gateway
+      配置
+        登陆验证码配置
+        限流配置
+        路由配置
+      过滤器
+        密码解码
+        全局拦截，重写header
+        验证骂处理
+      处理类 (webflux方式)
+        hystrix 服务熔断处理类
+        验证码生成逻辑处理类
+        swagger源，ui，访问权限处理类
+
+pig-codegen mp生成代码(controller,entity,mapper,service/js,vue)
+  引入 velocity
+  代码生成工具类(指定模板,配置表)
+  代码模板文件
+
+pig-monitor 监控模块，基于 spring boot admin
+  WebSecurity配置类
+
+pig-register  nacos注册中心 就是nacos的源码运行起来了
+
+pig-upms 通用用户权限管理聚合模块
+  pig-upms-api 公共api模块
+    业务相关vo,dto,entity  微服务调用feign相关
+    spring.factories 启动容器时创建bean(熔断)
+  pig-upms-biz 业务处理模块 CRUD操作
+    部门管理
+    字典管理
+    日志管理
+    菜单管理
+    客户端管理
+    角色管理
+    令牌管理
+    用户管理
+
+
+
